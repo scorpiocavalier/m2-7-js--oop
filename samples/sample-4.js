@@ -1,9 +1,11 @@
 class Student {
-    constructor() {
-        this.excitement = 1;
-    }
+  constructor() {
+    this.excitement = 1;
+  }
 
-    writeCode = () => { this.learn(); }
+  writeCode = () => {
+    this.learn();
+  };
 }
 
 let bob = new Student();

@@ -9,7 +9,8 @@
 //
 // Let's create an `add` method in our BookList class. It should take a book
 // as a parameter. When we call `.add`, it should push that new book into the
-// `books` array on the `BookList` class.
+// `books` array on the `BookList` class. Also, if no Book is being currently read
+// we should set currentlyReading to point to this newly added Book.
 //
 // Books have an `isRead` property, to indicate if we've read it or not.
 // Let's also add two new methods:

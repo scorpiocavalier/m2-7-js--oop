@@ -34,18 +34,18 @@ class Cat {
   }
 
   sleep = hours => {
-    this.tiredness -= 5 * hours
-    this.happiness += 20
+    this.tiredness -= this.tiredness - 5 * hours >= 0 ? 5 * hours : 0
+    this.happiness += 10 * hours
   }
 
   eat = kibbles => {
-    this.hunger -= kibbles / 5
-    this.happiness += 20
+    this.hunger -= this.hunger - Math.round(kibbles / 5) >= 0 ? Math.round(kibbles / 5) : 0
+    this.happiness += 1 * kibbles
   }
 
   play = minutes => {
-    this.loneliness -= 3 * minutes
-    this.happiness += 20
+    this.loneliness -= this.loneliness - 3 * minutes >= 0 ? 3 * minutes : 0
+    this.happiness += 1 * minutes
   }
 }
 
@@ -56,8 +56,8 @@ console.log('Once born:', JSON.stringify(boots, null, 2))
 boots.sleep(8)
 console.log('After sleeping: ', JSON.stringify(boots, null, 2))
 
-boots.eat(30)
+boots.eat(300)
 console.log('After eating: ', JSON.stringify(boots, null, 2))
 
-boots.play(30)
+boots.play(300)
 console.log('After playing: ', JSON.stringify(boots, null, 2))

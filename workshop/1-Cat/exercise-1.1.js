@@ -4,15 +4,14 @@
 
 // A) Add some properties to our class instances.
 // Objects created via this class should have the following properties:
-/*
-{
-  species: 'cat',
-  tiredness: 0,
-  hunger: 0,
-  loneliness: 0,
-  happiness: 0,
-}
-*/
+
+// {
+//   species: 'cat',
+//   tiredness: 0,
+//   hunger: 0,
+//   loneliness: 0,
+//   happiness: 0,
+// }
 
 class Cat {
   // Add code here

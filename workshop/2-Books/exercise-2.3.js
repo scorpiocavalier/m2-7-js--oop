@@ -62,5 +62,5 @@ homeLibrary.add(new Book('American Gods', 'Fiction', 'Neil Gaiman'));
 homeLibrary.add(new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true));
 
 console.log(JSON.stringify(homeLibrary, null, 2));
-console.log('Unread: ', JSON.stringify(homeLibrary.getNumUnread(), null, 2)); // 2
-console.log('Read: ', JSON.stringify(homeLibrary.getNumRead(), null, 2)); // 1
+console.log('Unread:', JSON.stringify(homeLibrary.getNumUnread(), null, 2)); // 2
+console.log('Read:', JSON.stringify(homeLibrary.getNumRead(), null, 2)); // 1

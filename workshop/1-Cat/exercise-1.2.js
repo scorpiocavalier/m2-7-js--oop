@@ -17,6 +17,6 @@ class Cat {
   }
 }
 
-let boots = new Cat('Boots', 'Simaese')
+const boots = new Cat('Boots', 'Siamese')
 
-console.log(boots) // Cat {name: "Boots", breed: "Simaese"}
+console.log(JSON.stringify(boots, null, 2))

@@ -9,3 +9,14 @@
 // and confirm that you have everything in there.
 
 // By the way, Boots is a Simaese cat...
+
+class Cat {
+  constructor(name, breed) {
+    this.name = name
+    this.breed = breed
+  }
+}
+
+let boots = new Cat('Boots', 'Simaese')
+
+console.log(boots) // Cat {name: "Boots", breed: "Simaese"}

@@ -22,17 +22,45 @@
 //
 // The following code will fail by default. Your goal is to get it to run, and output the values specified at the end:
 
-const homeLibrary = new BookList();
+class Book {
+  constructor(title, genre, author, isRead=false) {
+    this.title = title
+    this.genre = genre
+    this.author = author
+    this.isRead = isRead
+  }
+}
 
-// Books are unread by default:
+class BookList {
+  constructor() {
+    this.books = []
+    this.lastRead = null
+    this.currentlyReading = null
+  }
+
+  add = book => {
+    this.books.push(book)
+    this.currentlyReading === null && (this.currentlyReading = book)
+  }
+
+  getNumRead = () => {
+    let read = 0
+    this.books.forEach(book => book.isRead && ++read)
+    return read
+  }
+
+  getNumUnread = () => {
+    let unread = 0
+    this.books.forEach(book => !book.isRead && ++unread)
+    return unread
+  }
+}
+
+const homeLibrary = new BookList()
 homeLibrary.add(new Book('The Shining', 'Horror', 'Stephen King'));
 homeLibrary.add(new Book('American Gods', 'Fiction', 'Neil Gaiman'));
+homeLibrary.add(new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true));
 
-// But, we can specify that we've read it:
-homeLibrary.add(
-  new Book('Eloquent JavaScript', 'Programming', 'Marijn Haverbeke', true)
-);
-
-// At this point, we should have 2 unread books, and 1 read book:
-console.log(homeLibrary.getNumUnread()); // 2
-console.log(homeLibrary.getNumRead()); // 1
+console.log(JSON.stringify(homeLibrary, null, 2));
+console.log('Unread: ', JSON.stringify(homeLibrary.getNumUnread(), null, 2)); // 2
+console.log('Read: ', JSON.stringify(homeLibrary.getNumRead(), null, 2)); // 1

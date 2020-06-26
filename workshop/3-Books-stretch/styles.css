@@ -1,8 +1,17 @@
+body {
+  background-color: rgb(203, 220, 236);
+}
+
 .library-section {
   display: grid;
   grid-template-columns: 1fr;
   row-gap: 2em;
   justify-items: center;
+  margin: 2em 0px;
+}
+
+.card {
+  box-shadow: 5px 5px 10px 3px lightslategrey;
 }
 
 .card-img-top {
@@ -14,7 +23,28 @@
   align-content: space-around;
 }
 
+.card-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.learnBtn, .addCartBtn {
+  width: 45%;
+}
+
 @media (min-width: 768px) {
+  .library-section {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1200px) {
+  .library-section {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1400px) {
   .library-section {
     grid-template-columns: repeat(4, 1fr);
   }

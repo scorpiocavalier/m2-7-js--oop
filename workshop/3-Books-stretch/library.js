@@ -109,6 +109,9 @@ for(let book of homeLibrary.books) {
   let cardBody = document.createElement('div')
   cardBody.classList = 'card-body'
 
+  let cardButtons = document.createElement('div')
+  cardButtons.classList = 'card-buttons'
+
   let cardTitle = document.createElement('h5')
   cardTitle.classList = 'card-title'
   cardTitle.innerText = book.getTitle()
@@ -118,16 +121,24 @@ for(let book of homeLibrary.books) {
   cardText.innerText = `${book.getTitle()} is a ${book.getGenre().toLowerCase()} book written by ${book.getAuthor()}.`
 
   let learnMoreBtn = document.createElement('a')
-  learnMoreBtn.classList = 'btn btn-primary'
+  learnMoreBtn.classList = 'learnBtn btn btn-dark'
   learnMoreBtn.href = '#'
   learnMoreBtn.innerText = 'Learn more'
+
+  let addToCartBtn = document.createElement('a')
+  addToCartBtn.classList = 'addCartBtn btn btn-primary'
+  addToCartBtn.href = '#'
+  addToCartBtn.innerText = 'Add to cart'
+
+  cardButtons.appendChild(learnMoreBtn)
+  cardButtons.appendChild(addToCartBtn)
+  
+  cardBody.appendChild(cardTitle)
+  cardBody.appendChild(cardText)
+  cardBody.appendChild(cardButtons)
 
   card.appendChild(img)
   card.appendChild(cardBody)
   
-  cardBody.appendChild(cardTitle)
-  cardBody.appendChild(cardText)
-  cardBody.appendChild(learnMoreBtn)
-
   librarySection.appendChild(card)
 }

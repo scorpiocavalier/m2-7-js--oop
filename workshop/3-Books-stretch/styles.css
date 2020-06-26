@@ -1,0 +1,39 @@
+.library-section {
+  display: grid;
+  grid-template-columns: 1fr;
+  row-gap: 2em;
+  justify-items: center;
+}
+
+.card-img-top {
+  height: 370px;
+}
+
+.card-body {
+  display: grid;
+  align-content: space-around;
+}
+
+@media (min-width: 768px) {
+  .library-section {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+@media (min-width: 1920px) {
+  .library-section {
+    grid-template-columns: repeat(5, 1fr);
+  }
+}
+
+@media (min-width: 2560px) {
+  .library-section {
+    grid-template-columns: repeat(6, 1fr);
+  }
+}
+
+@media (min-width: 3840px) {
+  .library-section {
+    grid-template-columns: repeat(8, 1fr);
+  }
+}
